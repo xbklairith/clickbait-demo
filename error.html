@@ -1,0 +1,569 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="generator" content="Phusion Passenger">
+	<title>Web application could not be started</title>
+	<style type="text/css">
+		body {
+	font-family: Verdana, 'Bitstream Vera Sans', Arial, Sans-Serif;
+	font-size: 10pt;
+	background: white;
+	color: #222222;
+	margin: 0;
+	padding-top: 3em;
+	padding-bottom: 3em;
+	padding-left: 4.5em;
+	padding-right: 4.5em;
+}
+
+h1 {
+	font-size: 17pt;
+	font-weight: medium;
+	color: #533e72;
+	border-bottom: 1px solid #533e72;
+}
+
+h1.title {
+	margin-top: 0;
+}
+
+h1.error_title {
+	color: red;
+	border-bottom: 1px solid red;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+dt {
+	font-weight: bold;
+	color: #280050;
+}
+
+dd {
+	margin-top: 0.5em;
+	margin-bottom: 1em;
+}
+
+.commands {
+	border: 1px solid #b594e7;
+	background: #ddc6ff;
+	padding: 0.5em;
+	margin: 0.5em;
+	font-family: 'Bitstream Vera Sans Mono', 'Courier New', Monospace;
+}
+
+pre {
+	overflow: auto;
+	white-space: pre-wrap;
+	text-align: left;
+}
+
+table.backtrace th {
+	background: #8470a6;
+	color: white;
+}
+
+table.backtrace th,
+table.backtrace td {
+	padding: 0.2em;
+	padding-left: 0.4em;
+	padding-right: 0.4em;
+}
+
+table.backtrace tr td {
+	background: #ecdfff;
+}
+
+table.backtrace tr.even td {
+	background: #f7f2ff;
+}
+
+table.backtrace td.index {
+	font-weight: bold;
+}
+
+#site_footer {
+	border-top: solid 1px black;
+	margin-top: 1em;
+	padding-top: 1em;
+	font-size: small;
+	color: #777777;
+}
+
+#site_footer a {
+	color: #65498e;
+}
+
+#site_footer a:hover {
+	color: #9681d9;
+}
+
+#site_header .corporate_identity {
+	display: none;
+}
+
+	</style>
+	<link rel="stylesheet" type="text/css" href="http://www.modrails.com/error_pages/1.0/error_page.css">
+	<style type="text/css">
+		dd {
+			text-align: left;
+		}
+
+		dd pre {
+			margin-top: 0;
+			margin-bottom: 0;
+		}
+	</style>
+</head>
+
+<body>
+
+	<div id="site_container">
+		<div id="site_header">
+			<ul class="corporate_identity">
+				<li class="logo"><a href="https://www.phusionpassenger.com"><span>Phusion Passenger</span></a></li>
+			</ul>
+		</div>
+		<div id="site_body">
+			<h1 class="error_title">Web application could not be started</h1>
+			<div id="content">
+				An error occurred while starting up the preloader: it did not write a startup response in time. Please read <a href="https://github.com/phusion/passenger/wiki/Debugging-application-startup-problems">this article</a> for more information about this problem.<br>
+<h2>Raw process output:</h2>
+<pre>
+[2017-07-20 15:50:13] INFO  WEBrick 1.3.1
+[2017-07-20 15:50:13] INFO  ruby 2.3.0 (2015-12-25) [x86_64-linux]
+== Sinatra (v2.0.0) has taken the stage on 4567 for production with backup from WEBrick
+[2017-07-20 15:50:13] INFO  WEBrick::HTTPServer#start: pid=25445 port=4567
+</pre>
+
+				<dl>
+				<dt>Error ID</dt>
+				<dd>b1055a15</dd>
+				<dt>Application root</dt>
+				<dd>/opt/amivoice_ai/airline_demo</dd>
+				<dt>Environment (value of RAILS_ENV, RACK_ENV, WSGI_ENV, NODE_ENV and PASSENGER_APP_ENV)</dt>
+				<dd>production</dd>
+
+					<dt>Ruby interpreter command</dt>
+					<dd><pre>/opt/rbenv/versions/2.3.0/bin/ruby</pre></dd>
+
+				<dt>User and groups</dt>
+				<dd><pre>uid=<wbr>99(nobody) gid=<wbr>99(nobody) groups=<wbr>99(nobody)
+</pre></dd>
+				<dt>Environment variables</dt>
+				<dd><pre>TERM=<wbr>xterm-color
+PATH=<wbr>/sbin:<wbr>/usr/sbin:<wbr>/bin:<wbr>/usr/bin
+PWD=<wbr>/opt/amivoice_ai/airline_demo
+LANG=<wbr>en_US.UTF-8
+SHLVL=<wbr>2
+_=<wbr>/opt/nginx/sbin/nginx
+PASSENGER_USE_FEEDBACK_FD=<wbr>true
+SERVER_SOFTWARE=<wbr>nginx/1.7.12 Phusion_Passenger/5.0.30
+PASSENGER_DEBUG_DIR=<wbr>/tmp/passenger.spawn-debug.XXXXBaK6II
+USER=<wbr>nobody
+LOGNAME=<wbr>nobody
+SHELL=<wbr>/sbin/nologin
+HOME=<wbr>/
+IN_PASSENGER=<wbr>1
+PYTHONUNBUFFERED=<wbr>1
+NODE_PATH=<wbr>/opt/rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/passenger-5.0.30/src/nodejs_supportlib
+RAILS_ENV=<wbr>production
+RACK_ENV=<wbr>production
+WSGI_ENV=<wbr>production
+NODE_ENV=<wbr>production
+PASSENGER_APP_ENV=<wbr>production
+</pre></dd>
+				<dt>Ulimits</dt>
+				<dd><pre>Unknown</pre></dd>
+
+					<dt>System metrics</dt>
+					<dd><pre>------------- General -------------
+Kernel version    :<wbr> 4.6.3-x86_64-linode70
+Uptime            :<wbr> 330d 16h 51m 16s
+Load averages     :<wbr> 0.47%,<wbr> 0.37%,<wbr> 0.36%
+Fork rate         :<wbr> unknown
+
+------------- CPU -------------
+Number of CPUs    :<wbr>    4
+Average CPU usage :<wbr>  35%  --  30% user,<wbr>   0% nice,<wbr>   5% system,<wbr>  65% idle
+  CPU 1           :<wbr>   0%  --   0% user,<wbr>   0% nice,<wbr>   0% system,<wbr> 100% idle
+  CPU 2           :<wbr>  20%  --   0% user,<wbr>   0% nice,<wbr>  20% system,<wbr>  80% idle
+  CPU 3           :<wbr> 100%  -- 100% user,<wbr>   0% nice,<wbr>   0% system,<wbr>   0% idle
+  CPU 4           :<wbr>  20%  --  20% user,<wbr>   0% nice,<wbr>   0% system,<wbr>  80% idle
+I/O pressure      :<wbr>   0%
+  CPU 1           :<wbr>   0%
+  CPU 2           :<wbr>   0%
+  CPU 3           :<wbr>   0%
+  CPU 4           :<wbr>   0%
+Interference from other VMs:<wbr>   8%
+  CPU 1                    :<wbr>   0%
+  CPU 2                    :<wbr>  17%
+  CPU 3                    :<wbr>   0%
+  CPU 4                    :<wbr>  17%
+
+------------- Memory -------------
+RAM total         :<wbr>   7982 MB
+RAM used          :<wbr>   6241 MB (78%)
+RAM free          :<wbr>   1741 MB
+Swap total        :<wbr>    255 MB
+Swap used         :<wbr>    252 MB (99%)
+Swap free         :<wbr>      3 MB
+Swap in           :<wbr> unknown
+Swap out          :<wbr> unknown
+
+</pre></dd>
+
+
+					<dt>General Ruby interpreter information</dt>
+					<dd><pre>RUBY_VERSION =<wbr> 2.3.0
+RUBY_PLATFORM =<wbr> x86_64-linux
+RUBY_ENGINE =<wbr> ruby
+RubyGems version =<wbr> 2.5.1
+RubyGems paths =<wbr> [&quot;/.gem/ruby/2.3.0&quot;,<wbr> &quot;/opt/rbenv/versions/2.3.0/lib/ruby/gems/2.3.0&quot;]
+</pre></dd>
+
+
+					<dt>Ruby configuration (RbConfig::CONFIG)</dt>
+					<dd><pre>DESTDIR =<wbr>
+MAJOR =<wbr> 2
+MINOR =<wbr> 3
+TEENY =<wbr> 0
+PATCHLEVEL =<wbr> 0
+INSTALL =<wbr> /usr/bin/install -c
+EXEEXT =<wbr>
+prefix =<wbr> /opt/rbenv/versions/2.3.0
+ruby_install_name =<wbr> ruby
+RUBY_INSTALL_NAME =<wbr> ruby
+RUBY_SO_NAME =<wbr> ruby
+exec =<wbr> exec
+ruby_pc =<wbr> ruby-2.3.pc
+PACKAGE =<wbr> ruby
+BUILTIN_TRANSSRCS =<wbr>  enc/trans/newline.c
+USE_RUBYGEMS =<wbr> YES
+MANTYPE =<wbr> doc
+NROFF =<wbr> /usr/bin/nroff
+vendorarchhdrdir =<wbr> /opt/rbenv/versions/2.3.0/include/ruby-2.3.0/vendor_ruby/x86_64-linux
+sitearchhdrdir =<wbr> /opt/rbenv/versions/2.3.0/include/ruby-2.3.0/site_ruby/x86_64-linux
+rubyarchhdrdir =<wbr> /opt/rbenv/versions/2.3.0/include/ruby-2.3.0/x86_64-linux
+vendorhdrdir =<wbr> /opt/rbenv/versions/2.3.0/include/ruby-2.3.0/vendor_ruby
+sitehdrdir =<wbr> /opt/rbenv/versions/2.3.0/include/ruby-2.3.0/site_ruby
+rubyhdrdir =<wbr> /opt/rbenv/versions/2.3.0/include/ruby-2.3.0
+RUBY_SEARCH_PATH =<wbr>
+UNIVERSAL_INTS =<wbr>
+UNIVERSAL_ARCHNAMES =<wbr>
+configure_args =<wbr>  &apos;--prefix=<wbr>/opt/rbenv/versions/2.3.0&apos; &apos;--without-X&apos; &apos;--disable-install-rdoc&apos; &apos;LDFLAGS=<wbr>-L/opt/rbenv/versions/2.3.0/lib &apos; &apos;CPPFLAGS=<wbr>-I/opt/rbenv/versions/2.3.0/include &apos;
+CONFIGURE =<wbr> configure
+vendorarchdir =<wbr> /opt/rbenv/versions/2.3.0/lib/ruby/vendor_ruby/2.3.0/x86_64-linux
+vendorlibdir =<wbr> /opt/rbenv/versions/2.3.0/lib/ruby/vendor_ruby/2.3.0
+vendordir =<wbr> /opt/rbenv/versions/2.3.0/lib/ruby/vendor_ruby
+sitearchdir =<wbr> /opt/rbenv/versions/2.3.0/lib/ruby/site_ruby/2.3.0/x86_64-linux
+sitelibdir =<wbr> /opt/rbenv/versions/2.3.0/lib/ruby/site_ruby/2.3.0
+sitedir =<wbr> /opt/rbenv/versions/2.3.0/lib/ruby/site_ruby
+rubyarchdir =<wbr> /opt/rbenv/versions/2.3.0/lib/ruby/2.3.0/x86_64-linux
+rubylibdir =<wbr> /opt/rbenv/versions/2.3.0/lib/ruby/2.3.0
+ruby_version =<wbr> 2.3.0
+sitearch =<wbr> x86_64-linux
+arch =<wbr> x86_64-linux
+sitearchincludedir =<wbr> /opt/rbenv/versions/2.3.0/include/x86_64-linux
+archincludedir =<wbr> /opt/rbenv/versions/2.3.0/include/x86_64-linux
+sitearchlibdir =<wbr> /opt/rbenv/versions/2.3.0/lib/x86_64-linux
+archlibdir =<wbr> /opt/rbenv/versions/2.3.0/lib/x86_64-linux
+libdirname =<wbr> libdir
+RUBY_EXEC_PREFIX =<wbr> /opt/rbenv/versions/2.3.0
+RUBY_LIB_VERSION =<wbr>
+RUBY_LIB_VERSION_STYLE =<wbr> 3	/* full */
+RI_BASE_NAME =<wbr> ri
+ridir =<wbr> /opt/rbenv/versions/2.3.0/share/ri
+rubysitearchprefix =<wbr> /opt/rbenv/versions/2.3.0/lib/ruby/x86_64-linux
+rubyarchprefix =<wbr> /opt/rbenv/versions/2.3.0/lib/ruby/x86_64-linux
+MAKEFILES =<wbr> Makefile GNUmakefile
+PLATFORM_DIR =<wbr>
+THREAD_MODEL =<wbr> pthread
+SYMBOL_PREFIX =<wbr>
+EXPORT_PREFIX =<wbr>
+COMMON_HEADERS =<wbr>
+COMMON_MACROS =<wbr>
+COMMON_LIBS =<wbr>
+MAINLIBS =<wbr>
+ENABLE_SHARED =<wbr> no
+DLDLIBS =<wbr>  -lc
+SOLIBS =<wbr>
+LIBRUBYARG_SHARED =<wbr> -Wl,<wbr>-R/opt/rbenv/versions/2.3.0/lib -L/opt/rbenv/versions/2.3.0/lib
+LIBRUBYARG_STATIC =<wbr> -Wl,<wbr>-R/opt/rbenv/versions/2.3.0/lib -L/opt/rbenv/versions/2.3.0/lib -lruby-static
+LIBRUBYARG =<wbr> -Wl,<wbr>-R/opt/rbenv/versions/2.3.0/lib -L/opt/rbenv/versions/2.3.0/lib -lruby-static
+LIBRUBY =<wbr> libruby-static.a
+LIBRUBY_ALIASES =<wbr> libruby.so
+LIBRUBY_SO =<wbr> libruby.so.2.3.0
+LIBRUBY_A =<wbr> libruby-static.a
+RUBYW_INSTALL_NAME =<wbr>
+rubyw_install_name =<wbr>
+EXTDLDFLAGS =<wbr>
+EXTLDFLAGS =<wbr>
+strict_warnflags =<wbr> -std=<wbr>iso9899:<wbr>1999
+warnflags =<wbr> -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration -Wdeprecated-declarations -Wno-packed-bitfield-compat
+debugflags =<wbr> -ggdb3
+optflags =<wbr> -O3 -fno-fast-math
+NULLCMD =<wbr> :<wbr>
+DLNOBJ =<wbr> dln.o
+EXECUTABLE_EXTS =<wbr>
+ARCHFILE =<wbr>
+LIBRUBY_RELATIVE =<wbr> no
+EXTOUT =<wbr> .ext
+PREP =<wbr> miniruby
+CROSS_COMPILING =<wbr> no
+TEST_RUNNABLE =<wbr> yes
+rubylibprefix =<wbr> /opt/rbenv/versions/2.3.0/lib/ruby
+setup =<wbr> Setup
+ENCSTATIC =<wbr>
+EXTSTATIC =<wbr>
+STRIP =<wbr> strip -S -x
+TRY_LINK =<wbr>
+PRELOADENV =<wbr> LD_PRELOAD
+LIBPATHENV =<wbr> LD_LIBRARY_PATH
+RPATHFLAG =<wbr>  -Wl,<wbr>-R%1$-s
+LIBPATHFLAG =<wbr>  -L%1$-s
+LINK_SO =<wbr>
+ASMEXT =<wbr> S
+LIBEXT =<wbr> a
+DLEXT2 =<wbr>
+DLEXT =<wbr> so
+LDSHAREDXX =<wbr> g++ -shared
+LDSHARED =<wbr> gcc -shared
+CCDLFLAGS =<wbr> -fPIC
+STATIC =<wbr>
+ARCH_FLAG =<wbr>
+DLDFLAGS =<wbr>
+ALLOCA =<wbr>
+codesign =<wbr>
+POSTLINK =<wbr> :<wbr>
+WERRORFLAG =<wbr> -Werror
+CHDIR =<wbr> cd -P
+RMALL =<wbr> rm -fr
+RMDIRS =<wbr> rmdir --ignore-fail-on-non-empty -p
+RMDIR =<wbr> rmdir --ignore-fail-on-non-empty
+CP =<wbr> cp
+RM =<wbr> rm -f
+PKG_CONFIG =<wbr> pkg-config
+PYTHON =<wbr>
+DOXYGEN =<wbr>
+DOT =<wbr>
+MAKEDIRS =<wbr> /bin/mkdir -p
+MKDIR_P =<wbr> /bin/mkdir -p
+INSTALL_DATA =<wbr> /usr/bin/install -c -m 644
+INSTALL_SCRIPT =<wbr> /usr/bin/install -c
+INSTALL_PROGRAM =<wbr> /usr/bin/install -c
+SET_MAKE =<wbr>
+LN_S =<wbr> ln -s
+NM =<wbr> nm
+DLLWRAP =<wbr>
+WINDRES =<wbr>
+OBJCOPY =<wbr> :<wbr>
+OBJDUMP =<wbr> objdump
+ASFLAGS =<wbr>
+AS =<wbr> as
+AR =<wbr> ar
+RANLIB =<wbr> ranlib
+try_header =<wbr>
+CC_VERSION =<wbr> gcc -v
+COUTFLAG =<wbr> -o
+OUTFLAG =<wbr> -o
+CPPOUTFILE =<wbr> -o conftest.i
+GNU_LD =<wbr> yes
+LD =<wbr> ld
+GCC =<wbr> yes
+EGREP =<wbr> /bin/grep -E
+GREP =<wbr> /bin/grep
+CPP =<wbr> gcc -E
+CXXFLAGS =<wbr>  -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration -Wdeprecated-declarations -Wno-packed-bitfield-compat
+OBJEXT =<wbr> o
+CPPFLAGS =<wbr> -I/opt/rbenv/versions/2.3.0/include
+LDFLAGS =<wbr> -L. -L/opt/rbenv/versions/2.3.0/lib  -fstack-protector -rdynamic -Wl,<wbr>-export-dynamic
+CFLAGS =<wbr>  -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration -Wdeprecated-declarations -Wno-packed-bitfield-compat
+CXX =<wbr> g++
+CC =<wbr> gcc
+NACL_LIB_PATH =<wbr>
+NACL_SDK_VARIANT =<wbr>
+NACL_SDK_ROOT =<wbr>
+NACL_TOOLCHAIN =<wbr>
+target_os =<wbr> linux
+target_vendor =<wbr> pc
+target_cpu =<wbr> x86_64
+target =<wbr> x86_64-pc-linux-gnu
+host_os =<wbr> linux-gnu
+host_vendor =<wbr> pc
+host_cpu =<wbr> x86_64
+host =<wbr> x86_64-pc-linux-gnu
+RUBY_VERSION_NAME =<wbr> ruby-2.3.0
+RUBYW_BASE_NAME =<wbr> rubyw
+RUBY_BASE_NAME =<wbr> ruby
+build_os =<wbr> linux-gnu
+build_vendor =<wbr> pc
+build_cpu =<wbr> x86_64
+build =<wbr> x86_64-pc-linux-gnu
+RUBY_PROGRAM_VERSION =<wbr> 2.3.0
+cxxflags =<wbr>  -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration -Wdeprecated-declarations -Wno-packed-bitfield-compat
+cppflags =<wbr>
+cflags =<wbr>  -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration -Wdeprecated-declarations -Wno-packed-bitfield-compat
+target_alias =<wbr>
+host_alias =<wbr>
+build_alias =<wbr>
+LIBS =<wbr> -lpthread -lrt -ldl -lcrypt -lm
+ECHO_T =<wbr>
+ECHO_N =<wbr> -n
+ECHO_C =<wbr>
+DEFS =<wbr>
+mandir =<wbr> /opt/rbenv/versions/2.3.0/share/man
+localedir =<wbr> /opt/rbenv/versions/2.3.0/share/locale
+libdir =<wbr> /opt/rbenv/versions/2.3.0/lib
+psdir =<wbr> /opt/rbenv/versions/2.3.0/share/doc/ruby
+pdfdir =<wbr> /opt/rbenv/versions/2.3.0/share/doc/ruby
+dvidir =<wbr> /opt/rbenv/versions/2.3.0/share/doc/ruby
+htmldir =<wbr> /opt/rbenv/versions/2.3.0/share/doc/ruby
+infodir =<wbr> /opt/rbenv/versions/2.3.0/share/info
+docdir =<wbr> /opt/rbenv/versions/2.3.0/share/doc/ruby
+oldincludedir =<wbr> /usr/include
+includedir =<wbr> /opt/rbenv/versions/2.3.0/include
+localstatedir =<wbr> /opt/rbenv/versions/2.3.0/var
+sharedstatedir =<wbr> /opt/rbenv/versions/2.3.0/com
+sysconfdir =<wbr> /opt/rbenv/versions/2.3.0/etc
+datadir =<wbr> /opt/rbenv/versions/2.3.0/share
+datarootdir =<wbr> /opt/rbenv/versions/2.3.0/share
+libexecdir =<wbr> /opt/rbenv/versions/2.3.0/libexec
+sbindir =<wbr> /opt/rbenv/versions/2.3.0/sbin
+bindir =<wbr> /opt/rbenv/versions/2.3.0/bin
+exec_prefix =<wbr> /opt/rbenv/versions/2.3.0
+PACKAGE_URL =<wbr>
+PACKAGE_BUGREPORT =<wbr>
+PACKAGE_STRING =<wbr>
+PACKAGE_VERSION =<wbr>
+PACKAGE_TARNAME =<wbr>
+PACKAGE_NAME =<wbr>
+PATH_SEPARATOR =<wbr> :<wbr>
+SHELL =<wbr> /bin/sh
+archdir =<wbr> /opt/rbenv/versions/2.3.0/lib/ruby/2.3.0/x86_64-linux
+topdir =<wbr> /opt/rbenv/versions/2.3.0/lib/ruby/2.3.0/x86_64-linux
+</pre></dd>
+
+
+					<dt>Activated Ruby gems</dt>
+					<dd><pre>did_you_mean =<wbr>&gt; 1.0.0
+</pre></dd>
+
+
+					<dt>Ruby load path ($LOAD_PATH)</dt>
+					<dd><pre>/opt/rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/did_you_mean-1.0.0/lib
+/opt/rbenv/versions/2.3.0/lib/ruby/site_ruby/2.3.0
+/opt/rbenv/versions/2.3.0/lib/ruby/site_ruby/2.3.0/x86_64-linux
+/opt/rbenv/versions/2.3.0/lib/ruby/site_ruby
+/opt/rbenv/versions/2.3.0/lib/ruby/vendor_ruby/2.3.0
+/opt/rbenv/versions/2.3.0/lib/ruby/vendor_ruby/2.3.0/x86_64-linux
+/opt/rbenv/versions/2.3.0/lib/ruby/vendor_ruby
+/opt/rbenv/versions/2.3.0/lib/ruby/2.3.0
+/opt/rbenv/versions/2.3.0/lib/ruby/2.3.0/x86_64-linux
+</pre></dd>
+
+
+					<dt>Ruby loaded libraries ($LOADED_FEATURES)</dt>
+					<dd><pre>enumerator.so
+thread.rb
+rational.so
+complex.so
+/opt/rbenv/versions/2.3.0/lib/ruby/2.3.0/x86_64-linux/enc/encdb.so
+/opt/rbenv/versions/2.3.0/lib/ruby/2.3.0/x86_64-linux/enc/trans/transdb.so
+/opt/rbenv/versions/2.3.0/lib/ruby/2.3.0/unicode_normalize.rb
+/opt/rbenv/versions/2.3.0/lib/ruby/2.3.0/x86_64-linux/rbconfig.rb
+/opt/rbenv/versions/2.3.0/lib/ruby/2.3.0/rubygems/compatibility.rb
+/opt/rbenv/versions/2.3.0/lib/ruby/2.3.0/rubygems/defaults.rb
+/opt/rbenv/versions/2.3.0/lib/ruby/2.3.0/rubygems/deprecate.rb
+/opt/rbenv/versions/2.3.0/lib/ruby/2.3.0/rubygems/errors.rb
+/opt/rbenv/versions/2.3.0/lib/ruby/2.3.0/rubygems/version.rb
+/opt/rbenv/versions/2.3.0/lib/ruby/2.3.0/rubygems/requirement.rb
+/opt/rbenv/versions/2.3.0/lib/ruby/2.3.0/rubygems/platform.rb
+/opt/rbenv/versions/2.3.0/lib/ruby/2.3.0/rubygems/basic_specification.rb
+/opt/rbenv/versions/2.3.0/lib/ruby/2.3.0/rubygems/stub_specification.rb
+/opt/rbenv/versions/2.3.0/lib/ruby/2.3.0/rubygems/util/list.rb
+/opt/rbenv/versions/2.3.0/lib/ruby/2.3.0/x86_64-linux/stringio.so
+/opt/rbenv/versions/2.3.0/lib/ruby/2.3.0/rubygems/specification.rb
+/opt/rbenv/versions/2.3.0/lib/ruby/2.3.0/rubygems/exceptions.rb
+/opt/rbenv/versions/2.3.0/lib/ruby/2.3.0/rubygems/core_ext/kernel_gem.rb
+/opt/rbenv/versions/2.3.0/lib/ruby/2.3.0/monitor.rb
+/opt/rbenv/versions/2.3.0/lib/ruby/2.3.0/rubygems/core_ext/kernel_require.rb
+/opt/rbenv/versions/2.3.0/lib/ruby/2.3.0/rubygems.rb
+/opt/rbenv/versions/2.3.0/lib/ruby/2.3.0/rubygems/path_support.rb
+/opt/rbenv/versions/2.3.0/lib/ruby/2.3.0/rubygems/dependency.rb
+/opt/rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/did_you_mean-1.0.0/lib/did_you_mean/version.rb
+/opt/rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/did_you_mean-1.0.0/lib/did_you_mean/core_ext/name_error.rb
+/opt/rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/did_you_mean-1.0.0/lib/did_you_mean/levenshtein.rb
+/opt/rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/did_you_mean-1.0.0/lib/did_you_mean/jaro_winkler.rb
+/opt/rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/did_you_mean-1.0.0/lib/did_you_mean/spell_checkable.rb
+/opt/rbenv/versions/2.3.0/lib/ruby/2.3.0/delegate.rb
+/opt/rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/did_you_mean-1.0.0/lib/did_you_mean/spell_checkers/name_error_checkers/class_name_checker.rb
+/opt/rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/did_you_mean-1.0.0/lib/did_you_mean/spell_checkers/name_error_checkers/variable_name_checker.rb
+/opt/rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/did_you_mean-1.0.0/lib/did_you_mean/spell_checkers/name_error_checkers.rb
+/opt/rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/did_you_mean-1.0.0/lib/did_you_mean/spell_checkers/method_name_checker.rb
+/opt/rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/did_you_mean-1.0.0/lib/did_you_mean/spell_checkers/null_checker.rb
+/opt/rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/did_you_mean-1.0.0/lib/did_you_mean/formatter.rb
+/opt/rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/did_you_mean-1.0.0/lib/did_you_mean.rb
+/opt/rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/passenger-5.0.30/src/ruby_supportlib/phusion_passenger.rb
+/opt/rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/passenger-5.0.30/src/ruby_supportlib/phusion_passenger/constants.rb
+/opt/rbenv/versions/2.3.0/lib/ruby/2.3.0/x86_64-linux/etc.so
+/opt/rbenv/versions/2.3.0/lib/ruby/2.3.0/fileutils.rb
+/opt/rbenv/versions/2.3.0/lib/ruby/2.3.0/tmpdir.rb
+/opt/rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/passenger-5.0.30/src/ruby_supportlib/phusion_passenger/utils/tmpio.rb
+/opt/rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/passenger-5.0.30/src/ruby_supportlib/phusion_passenger/platform_info.rb
+/opt/rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/passenger-5.0.30/src/ruby_supportlib/phusion_passenger/platform_info/operating_system.rb
+/opt/rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/passenger-5.0.30/src/ruby_supportlib/phusion_passenger/platform_info/ruby.rb
+/opt/rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/passenger-5.0.30/src/ruby_supportlib/phusion_passenger/platform_info/binary_compatibility.rb
+/opt/rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/passenger-5.0.30/buildout/ruby/ruby-2.3.0-x86_64-linux/passenger_native_support.so
+/opt/rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/passenger-5.0.30/src/ruby_supportlib/phusion_passenger/native_support.rb
+/opt/rbenv/versions/2.3.0/lib/ruby/2.3.0/x86_64-linux/socket.so
+/opt/rbenv/versions/2.3.0/lib/ruby/2.3.0/x86_64-linux/io/wait.so
+/opt/rbenv/versions/2.3.0/lib/ruby/2.3.0/socket.rb
+/opt/rbenv/versions/2.3.0/lib/ruby/2.3.0/x86_64-linux/pathname.so
+/opt/rbenv/versions/2.3.0/lib/ruby/2.3.0/pathname.rb
+/opt/rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/passenger-5.0.30/src/ruby_supportlib/phusion_passenger/ruby_core_enhancements.rb
+/opt/rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/passenger-5.0.30/src/ruby_supportlib/phusion_passenger/ruby_core_io_enhancements.rb
+/opt/rbenv/versions/2.3.0/lib/ruby/2.3.0/base64.rb
+/opt/rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/passenger-5.0.30/src/ruby_supportlib/phusion_passenger/utils.rb
+/opt/rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/passenger-5.0.30/src/ruby_supportlib/phusion_passenger/preloader_shared_helpers.rb
+/opt/rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/passenger-5.0.30/src/ruby_supportlib/phusion_passenger/public_api.rb
+/opt/rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/passenger-5.0.30/src/ruby_supportlib/phusion_passenger/debug_logging.rb
+/opt/rbenv/versions/2.3.0/lib/ruby/2.3.0/shellwords.rb
+/opt/rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/passenger-5.0.30/src/ruby_supportlib/phusion_passenger/utils/shellwords.rb
+/opt/rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/passenger-5.0.30/src/ruby_supportlib/phusion_passenger/loader_shared_helpers.rb
+/opt/rbenv/versions/2.3.0/lib/ruby/2.3.0/x86_64-linux/fcntl.so
+/opt/rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/passenger-5.0.30/src/ruby_supportlib/phusion_passenger/message_channel.rb
+/opt/rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/passenger-5.0.30/src/ruby_supportlib/phusion_passenger/message_client.rb
+/opt/rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/passenger-5.0.30/src/ruby_supportlib/phusion_passenger/utils/native_support_utils.rb
+/opt/rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/passenger-5.0.30/src/ruby_supportlib/phusion_passenger/utils/unseekable_socket.rb
+/opt/rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/passenger-5.0.30/src/ruby_supportlib/phusion_passenger/request_handler/thread_handler.rb
+/opt/rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/passenger-5.0.30/src/ruby_supportlib/phusion_passenger/request_handler.rb
+/opt/rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/passenger-5.0.30/src/ruby_supportlib/phusion_passenger/utils/tee_input.rb
+/opt/rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/passenger-5.0.30/src/ruby_supportlib/phusion_passenger/rack/thread_handler_extension.rb
+</pre></dd>
+
+				</dl>
+			</div>
+		</div>
+		<div id="site_footer">
+			<!--
+			   You are free to modify the footer as you see fit,
+			   but we kindly ask of you to preserve to following
+			   text. Thank you.
+			-->
+			<div class="container">
+				Powered by <a href="https://www.phusionpassenger.com/">Phusion Passenger</a>,
+				<tt>mod_rails</tt> / <tt>mod_rack</tt> for Apache and Nginx.
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>

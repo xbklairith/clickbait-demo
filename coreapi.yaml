@@ -1,0 +1,179 @@
+swagger: '2.0'
+info:
+  description: Amivoice AI Platform API
+  version: 1.0.0
+  title: Amivoice AI
+host: www.sabai.stream
+basePath: /airline
+tags:
+  - name: nlu
+    description: Thai language understanding
+schemes:
+  - https
+paths:
+  /nlu:
+    get:
+      tags:
+        - nlu
+      summary: '[GET] Call NLU'
+      description: ''
+      operationId: getNLU
+      parameters:
+        - name: text
+          in: query
+          description: Text input
+          type: string
+          default: อยากไปเที่ยวที่ระยอง ยังไม่มีที่พัก
+          required: true
+      responses:
+        '200':
+          description: successful operation
+          schema:
+            $ref: '#/definitions/NLU'
+        '400':
+          description: Invalide text input
+    post:
+      tags:
+        - nlu
+      summary: '[POST] Call NLU'
+      description: ''
+      operationId: postNLU
+      consumes:
+        - application/x-www-form-urlencoded
+      parameters:
+        - name: text
+          in: formData
+          description: Text input
+          type: string
+          default: อยากไปเที่ยวที่ระยอง ยังไม่มีที่พัก
+          required: true
+      responses:
+        '200':
+          description: successful operation
+          schema:
+            $ref: '#/definitions/NLU'
+        '400':
+          description: Invalide text input
+
+securityDefinitions:
+  api_key:
+    type: apiKey
+    name: api_key
+    in: header
+definitions:
+  Number::Currency:
+    type: object
+    properties:
+      type: 
+        type: string
+      sub_type: 
+        type: string
+      currency: 
+        type: string
+      written_form: 
+        type: string
+      number_form:
+        type: string
+    xml:
+      name: Number::Currency
+  NLU:
+    type: object
+    properties:
+      text:
+        type: string
+      nlu_result: 
+        $ref: "#/definitions/nlu_result"
+      interpretation: 
+        $ref: "#/definitions/interpretation"
+    xml:
+      name: NLU
+
+  
+
+  nlu_result:
+    type: object
+    properties:
+      norm_text:
+        type: string
+        description: "Normalize text"
+      origninal_text:
+        type: string
+        description: "Original text"
+      semantic_tag:
+        type: string
+        description: "Semantic text"
+      semi_norm_text:
+        type: string
+        description: "Semi-Normalize text"
+      semantic_id:
+        type: number
+        format: integer
+        description: "Semantic ID"
+    xml:
+      name: nlu.result
+
+  interpretation:
+    type: object
+    properties:
+      intention_tag:
+        type: string
+        description: "Intention tag"
+      is_round_trip:
+        type: boolean
+        description: "Round trip flag"
+      booking_informations:
+        type: array 
+        items: 
+          $ref: "#/definitions/booking_info"
+    xml:
+      name: nlu.interpretation
+
+  booking_info:
+    type: object
+    properties:
+      destination:
+        $ref: "#/definitions/port_info"
+      departure:
+        $ref: "#/definitions/port_info"
+      date:
+        $ref: "#/definitions/date_range"
+        description: "Date range"
+        
+        
+      
+
+  port_info:
+    type: object
+    properties:
+      provice:
+        type: string
+        description: "Provice"
+      airport:
+        type: array
+        description: "List of airports"
+
+  date_range:
+    type: object
+    properties:
+      start:
+        type: string
+        description: "Date format"
+      end:
+        type: string
+        description: "Date format"
+
+
+
+  nlu_meta:
+    type: object
+    properties:
+      version:
+        type: string
+        description: "NLU version"
+    xml:
+      name: nlu.meta
+  
+externalDocs:
+  description: API Demo
+  url: >-
+    https://www.sabai.stream/airline

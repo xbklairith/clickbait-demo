@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.4.3/css/bulma.css">
+<link rel="stylesheet" href="https://unpkg.com/bulmaswatch/cerulean/bulmaswatch.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/balloon-css/0.4.0/balloon.min.css">
+
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>Clickbiat detection Demo</title>
+  
+</head>
+
+<body>
+  
+  <section class="hero is-primary">
+    <div class="hero-body">
+      <div class="container">
+        <h1 class="title">
+          Clickbiat detection
+        </h1>
+        <h2 class="subtitle">
+          Demo
+        </h2>
+      </div>
+    </div>
+  </section>
+  <section class="section">
+    <% if @noti_message %>
+      <div class="notification is-warning">
+        <%= @noti_message.to_s %>
+      </div>
+    <% end %>
+    <div class="container">
+      <form action method="post">
+        <div class="column is-half is-offset-one-quarter">
+          <div class="field has-addons ">
+            <div class="control is-expanded">
+              <input class="input" type="text" name="text" value="<%= @text if @text %>">
+            </div>
+            <div class="control">
+              <input class="button is-info" type="submit" value="Go">
+            </div>
+          </div>
+         
+        </div>
+        
+      </form>
+      
+      <div class="column is-offset-one-quarter">
+        <% if @semi_norm_text.to_s.length > 0 %>        
+        <div class="field is-horizontal">
+          <div class="field-label">
+            <label class="label">Semi-Norm: </label>
+          </div>
+          <div class="field-body">
+            <div class="field">
+              <div class="control">
+                <span class="tag is-primary is-medium"><%= @semi_norm_text %> </span> 
+              </div>
+            </div>
+          </div>
+        </div>
+        <% end %>
+
+        <% if @norm_text.to_s.length > 0 %>        
+        <div class="field is-horizontal">
+          <div class="field-label">
+            <label class="label">Norm: </label>
+          </div>
+          <div class="field-body">
+            <div class="field">
+              <div class="control">
+                <span class="tag is-primary is-medium"><%= @norm_text %> </span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <% end %>
+
+        <% if @sub_intent %>        
+        <div class="field is-horizontal">
+          <div class="field-label">
+            <label class="label">Semantic: </label>
+          </div>
+          <div class="field-body">
+            <div class="field">
+              <div class="control">
+                <span class="tag is-primary is-medium"><%= @sub_intent %></span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <% end %>
+
+        
+      </div>
+      <% if @departure_city || @departure_airport || @intent || @departure_datetime_begin.to_s.length > 0 || @departure_datetime_end.to_s.length > 0 %>
+        <div class="container">
+          <span class="title is-4">
+            Interpreted 
+          </span>
+          <span class="subtitle" >Airline application</span>
+          
+        </div>
+        <hr>
+      <% end %>
+
+
+      <div class="container">
+        <div class="column is-offset-one-quarter">
+          <% if @intent %>
+          <div class="field is-horizontal">
+            <div class="field-label">
+              <label class="label">Intention: </label>
+            </div>
+            <div class="field-body">
+              <div class="field">
+                <div class="control">
+                  <span class="tag is-primary is-medium"><%=  @intent %></span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <% end %>
+
+
+          <% if @departure_datetime_begin.to_s.length > 0 || @departure_datetime_end.to_s.length > 0 %>
+          <div class="field is-horizontal">
+            <div class="field-label">
+              <label class="label">Departure: </label>
+            </div>
+            <div class="field-body">
+              <div class="field">
+                <div class="control">
+                  <span class="tag is-primary is-medium"> <%= @departure_datetime_begin %> </span>
+                  ~ <span class="tag is-primary is-medium"> <%= @departure_datetime_end   %></span>                
+                </div>
+              </div>
+            </div>
+          </div>
+          <% end %>
+
+          <% if @return_datetime_begin.to_s.length > 0 || @return_datetime_end.to_s.length > 0 %>
+          <div class="field is-horizontal">
+            <div class="field-label">
+              <label class="label">Return: </label>
+            </div>
+            <div class="field-body">
+              <div class="field">
+                <div class="control">
+                  <span class="tag is-primary is-medium"> <%= @return_datetime_begin %> </span>
+                  ~ <span class="tag is-primary is-medium"> <%= @return_datetime_end   %></span>                
+                </div>
+              </div>
+            </div>
+          </div>
+          <% end %>
+
+        </div>
+      </div>
+
+      <% Array(@booking_info).each do |trip| %>
+
+      
+
+
+        <div class="tile is-ancestor">
+          
+          <div class="tile is-parent">
+            <div class="tile is-child box">
+
+              <div class="columns">
+                <div class="column">
+
+                  <% if show_place(trip.dig 'departure') %>
+                  <div class="field is-horizontal">
+                    <div class="field-label">
+                      <label class="label"> Departure: </label>
+                    </div>
+                    <div class="field-body">
+                      <div class="field">
+                        <div class="control">
+                          <span class="tag is-primary is-medium"> 
+                              <%= show_place(trip.dig 'departure') %>
+                          </span>
+                                 
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <% end %>
+
+
+                  <% if trip.dig 'departure', 'airport' %>
+                  <div class="field is-horizontal">
+                    <div class="field-label">
+                      <label class="label">Airport: </label>
+                    </div>
+                    <div class="field-body">
+                      <div class="field">
+                        <div class="control">
+                          <% Array(trip.dig('departure', 'airport')).each do |airport| %>
+                            <span class="tag is-primary is-medium"><%= airport %></span>
+                          <% end %>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <% end %>
+
+                  <% if (trip.dig 'departure', 'date','start') || (trip.dig 'departure', 'date','start') %>
+                  <div class="field is-horizontal">
+                    <div class="field-label">
+                      <label class="label">Time: </label>
+                    </div>
+                    <div class="field-body">
+                      <div class="field">
+                        <div class="control">
+                          <span class="tag is-primary is-medium"> 
+                            <%= "#{trip.dig 'departure', 'date','start' } #{trip.dig 'departure', 'time','start' }" %>
+                          </span>
+                          ~ 
+                          <span class="tag is-primary is-medium">
+                            <%= "#{trip.dig 'departure', 'date','end' } #{trip.dig 'departure', 'time','end' }" %>
+                          </span>                
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <% end %>
+
+                  
+
+                </div>
+                <div class="column">
+                  
+                  <% if show_place(trip.dig 'destination') %>
+                  <div class="field is-horizontal">
+                    <div class="field-label">
+                      <label class="label">Destination: </label>
+                    </div>
+                    <div class="field-body">
+                      <div class="field">
+                        <div class="control">
+                          <span class="tag is-primary is-medium"> 
+                              <%= show_place(trip.dig 'destination') %>
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <% end %>
+                  
+                  <% if trip.dig 'destination', 'airport'  %>
+                  <div class="field is-horizontal">
+                    <div class="field-label">
+                      <label class="label">Airport: </label>
+                    </div>
+                    <div class="field-body">
+                      <div class="field">
+                        <div class="control">
+                          <% Array(trip.dig('destination', 'airport')).each do |airport| %>
+                            <span class="tag is-primary is-medium"><%= airport %></span>
+                          <% end %>
+                                
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <% end %>
+                  
+                  <% if (trip.dig 'destination', 'date','start') || (trip.dig 'destination', 'date','start') %>
+                  <div class="field is-horizontal">
+                    <div class="field-label">
+                      <label class="label">Time: </label>
+                    </div>
+                    <div class="field-body">
+                      <div class="field">
+                        <div class="control">
+                          <span class="tag is-primary is-medium"> 
+                            <%= "#{trip.dig 'destination', 'date','start' } #{trip.dig 'destination', 'time','start' }" %>
+                          </span>
+                          ~ 
+                          <span class="tag is-primary is-medium">
+                            <%= "#{trip.dig 'destination', 'date','end' } #{trip.dig 'destination', 'time','end' }" %>
+                          </span>                
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <% end %>
+
+                </div>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+    
+      <% end %>
+
+      <% if @click_bait_result%>
+
+        <h2 class="title is-4">
+           <%= @click_bait_result %>
+        </h2>
+
+       
+      <% end %>
+   
+
+
+      <% if @nlu_result%>
+
+        <h2 class="title is-4">
+          Raw result
+        </h2>
+
+        <hr>
+        <pre><%= JSON.pretty_generate(@nlu_result) %><pre>
+      <% end %>
+    </div> 
+   
+
+       
+    
+  </section>
+</body>
+</html>
